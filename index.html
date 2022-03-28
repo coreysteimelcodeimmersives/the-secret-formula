@@ -12,7 +12,7 @@
     <div>
         <form id='simple-form'>
             <div>
-                <input type="text" id='input-text' autocomplete="off">
+                <input type="text" id='input-text' autocomplete="off" placeholder="Enter Text">
             </div>
             <div>
                 <input type="submit">
@@ -72,6 +72,28 @@
     <div>
         <form id="haircut-form">
             <h1>Schedule Your Haircut</h1>
+            <div>
+                <label>Date of Haircut Appointment</label>
+                <input type="date" id="haircut-date">
+            </div>
+            <div>
+                <label>Name of Hairstylist / Barber you prefer</label>
+                <input type="text" autocomplete="off" id='hairstylist-text' placeholder="Name">
+            </div>
+            <div id='hair-length'>
+                <h4>Length</h4>
+                <div>
+                    <label>Short</label>
+                    <input type="radio" id='short' name='hair-length' checked>
+                </div>
+                <div>
+                    <label>Long</label>
+                    <input type="radio" id='long' name='hair-length'>
+                </div>
+            </div>
+            <div>
+                <input type="submit">
+            </div>
         </form>
     </div>
     
