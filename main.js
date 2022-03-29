@@ -62,7 +62,7 @@ albumImg.src = 'https://images.squarespace-cdn.com/content/v1/5a5665100abd04ea81
 
 createAccountForm.addEventListener('submit', function(event){
     event.preventDefault();
-    if (username.value.length >= 3 && email.value.includes('@') && passwordOG.value === passwordConfirm.value){
+    if (username.value.length >= 3 && email.value.includes('@') && passwordOG.value === passwordConfirm.value && passwordOG.length == 0){
         alert(`Congratulations, you have created an account with username: ${username.value} and email ${email.value}`);
         username.value = '';
         email.value = '';
@@ -71,7 +71,8 @@ createAccountForm.addEventListener('submit', function(event){
     } else {
         let userNameShortMssg = 'Your username is too short. Please create a username that is atleast 3 characters long.\n';
         let emailInvalidMssg = 'Your email address is invalid. Please enter a valid email address.\n'
-        let passwordMismatch = 'Your passwords do not match. Please retype your passwords to confirm.'
+        let passwordMismatchMssg = 'Your passwords do not match. Please retype your passwords to confirm.'
+        let passwordMissingMssg = 'Please enter a password.'
         if (username.value.length >= 3){
             userNameShortMssg = '';
         }
@@ -79,9 +80,12 @@ createAccountForm.addEventListener('submit', function(event){
             emailInvalidMssg = '';
         }
         if (passwordOG.value == passwordConfirm.value){
-            passwordMismatch = '';
+            passwordMismatchMssg = '';
         }
-        alert(`${userNameShortMssg + emailInvalidMssg + passwordMismatch}`)
+        if (passwordOG.value.length > 0){
+            passwordMissingMssg = '';
+        }
+        alert(`${userNameShortMssg + emailInvalidMssg + passwordMismatchMssg + passwordMissingMssg}`)
     }
 });
 
