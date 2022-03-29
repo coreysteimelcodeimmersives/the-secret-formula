@@ -62,12 +62,27 @@ albumImg.src = 'https://images.squarespace-cdn.com/content/v1/5a5665100abd04ea81
 
 createAccountForm.addEventListener('submit', function(event){
     event.preventDefault();
-    alert(`Congratulations, you have created an account with username: ${username.value} and email ${email.value}`);
-    username.value = '';
-    email.value = '';
-    passwordOG = '';
-    passwordConfirm = '';
-    
+    if (username.value.length >= 3 && email.value.includes('@') && passwordOG.value === passwordConfirm.value){
+        alert(`Congratulations, you have created an account with username: ${username.value} and email ${email.value}`);
+        username.value = '';
+        email.value = '';
+        passwordOG.value = '';
+        passwordConfirm.value = '';
+    } else {
+        let userNameShortMssg = 'Your username is too short. Please create a username that is atleast 3 characters long.\n';
+        let emailInvalidMssg = 'Your email address is invalid. Please enter a valid email address.\n'
+        let passwordMismatch = 'Your passwords do not match. Please retype your passwords to confirm.'
+        if (username.value.length >= 3){
+            userNameShortMssg = '';
+        }
+        if (email.value.includes('@')){
+            emailInvalidMssg = '';
+        }
+        if (passwordOG.value == passwordConfirm.value){
+            passwordMismatch = '';
+        }
+        alert(`${userNameShortMssg + emailInvalidMssg + passwordMismatch}`)
+    }
 });
 
 
