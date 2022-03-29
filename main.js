@@ -49,7 +49,26 @@ haircutForm.addEventListener('submit', function(event){
     hairstylist.value = '';
     hairlength[0].checked = true;
     shortLong = '';
-})
+});
+
+let createAccountForm = document.querySelector('#create-account-form');
+let username = document.querySelector('#username');
+let email = document.querySelector('#email');
+let passwordOG = document.querySelector('#passwordOG');
+let passwordConfirm = document.querySelector('#passwordConfirm');
+let albumImg = document.querySelector('#dr-dog-img');
+
+albumImg.src = 'https://images.squarespace-cdn.com/content/v1/5a5665100abd04ea815ea674/1515651052288-RQUCYHWKBBCNIU7L8N5A/a3044246956_10.jpg?format=500w'
+
+createAccountForm.addEventListener('submit', function(event){
+    event.preventDefault();
+    alert(`Congratulations, you have created an account with username: ${username.value} and email ${email.value}`);
+    username.value = '';
+    email.value = '';
+    passwordOG = '';
+    passwordConfirm = '';
+    
+});
 
 
 
