@@ -1,3 +1,6 @@
+///////////////////////////////////////////////////////
+//////// Simple Form //////////////////////////////////
+///////////////////////////////////////////////////////
 let inputText = document.querySelector('#input-text');
 let simpleForm = document.querySelector('#simple-form');
 
@@ -7,11 +10,13 @@ simpleForm.addEventListener('submit', function(event){
     inputText.value = ''
 });
 
+////////////////////////////////////////////////////////////////
+/////////// Sandwich Builder ///////////////////////////////////
+////////////////////////////////////////////////////////////////
 let sandwichForm = document.querySelector('#sandwich-builder');
 let ingredients = document.querySelectorAll('#sandwich-builder input')
 let sandwich = 'Your wheat bread sandwich contains: '
 let ingredientList = [];
-
 
 sandwichForm.addEventListener('submit', function(event){
     event.preventDefault();
@@ -29,6 +34,9 @@ sandwichForm.addEventListener('submit', function(event){
     sandwich = 'Your wheat bread sandwich contains: ';
 });
 
+////////////////////////////////////////////////////////
+/////////// Hair Cut ///////////////////////////////////
+////////////////////////////////////////////////////////
 let date = document.querySelector('#haircut-date');
 let hairstylist = document.querySelector('#hairstylist-text');
 let hairlength = document.querySelectorAll('#hair-length input');
@@ -51,6 +59,9 @@ haircutForm.addEventListener('submit', function(event){
     shortLong = '';
 });
 
+//////////////////////////////////////////////////////////////////////
+//////////////// Create Account //////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
 let createAccountForm = document.querySelector('#create-account-form');
 let username = document.querySelector('#username');
 let email = document.querySelector('#email');
